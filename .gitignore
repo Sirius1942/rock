@@ -1,0 +1,5 @@
+
+*.pyc
+*.pyc
+basepro/__pycache__/urls.cpython-36.pyc
+basepro/__pycache__/settings.cpython-36.pyc
