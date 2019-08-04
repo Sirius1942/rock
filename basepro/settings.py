@@ -24,7 +24,7 @@ SECRET_KEY = 'yg@o)vx*3g4+kjqp(tj!qx2kp(3k%&va%x#j(4ot%fv3r$^#=p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 # 添加AUTH_USRE_MODEL 替换默认的user
 AUTH_USER_MODEL = 'user.UserProfile'
 
@@ -38,17 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'basepro.urls'
@@ -129,7 +132,7 @@ REST_FRAMEWORK = {
     )
 }
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -151,3 +154,41 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+# //跨域配置https://github.com/ottoyiu/django-cors-headers/
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST  = [
+    #  “ https://example.com ”，
+    #  “ https://sub.example.com ”，
+    #  “ http：// localhost：8080 ”，
+    "http://127.0.0.0:8000",
+    "http://localhost:8000",
+    "http://localhost:9527",
+    "http://127.0.0.0:9527"
+    
+]
+# CORS_ORIGIN_REGEX_WHITELIST  = [
+#      - [R “ ^ HTTPS：// \ W + \例子。\ COM $ ”，
+# ]
+
+CORS_ALLOW_METHODS  = [
+     ' DELETE ',
+     ' GET ',
+     ' OPTIONS ',
+     ' PATCH ',
+     ' POST ',
+     ' PUT ',
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
