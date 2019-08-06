@@ -79,10 +79,22 @@ WSGI_APPLICATION = 'basepro.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    #使用sqllite 的配置 
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # # 使用MySql的配置，注意需要先手工创建数据库,初始化未成功无法后续再修改Related model 'user.UserProfile' cannot be resolved
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'rock',
+    #     'USER': 'root',
+    #     'PASSWORD':'root',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '3306',
+    #     'CHARSET':'utf-8',
+    #     'COLLATION':'utf-8_general_ci',
+    # }
 }
 
 
@@ -167,7 +179,6 @@ CORS_ORIGIN_WHITELIST  = [
     "http://localhost:8000",
     "http://localhost:9527",
     "http://127.0.0.0:9527"
-    
 ]
 # CORS_ORIGIN_REGEX_WHITELIST  = [
 #      - [R “ ^ HTTPS：// \ W + \例子。\ COM $ ”，
