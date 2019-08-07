@@ -20,9 +20,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         print('in MyTokenObtainPairSerializer')
         token = super().get_token(user)
         # Add custom claims
-        token['username'] = user.username
-        token['code'] = 20000
-        print(token)
         # ...
         # print(token)
         return token
