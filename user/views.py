@@ -8,6 +8,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from django.http import HttpResponse,JsonResponse
 from rest_framework_jwt.utils import jwt_decode_handler
 from django.contrib.auth import get_user_model
+from django.contrib.auth import logout
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -46,7 +47,7 @@ def get_user_info(request):
         # print(token)
 
         token_msg=authentication.JWTAuthentication().get_validated_token(token)
-        print(token_msg)
+        # print(token_msg)
         user_object=authentication.JWTAuthentication().get_user(token_msg)
         # # print(dir(user_a))
         # # #顶一个空数组来接收token解析后的值
@@ -72,3 +73,11 @@ def get_user_info(request):
                  "message": "success"
         }
         return JsonResponse(re_data)
+
+def user_logout(request):
+    logout(request)
+    re_data={"data": "",
+             "code": 20000,
+             "message": "success"
+        }
+    return JsonResponse(re_data)
