@@ -3,6 +3,9 @@ from rest_framework import routers
 from user import views
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 from user.views import MyTokenObtainPairView
+from django.conf import settings
+from django.conf.urls.static import static
+
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
@@ -16,4 +19,4 @@ urlpatterns = [
     path('user/info',views.get_user_info),
     path('user/token_refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('user/logout', views.user_logout)
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
