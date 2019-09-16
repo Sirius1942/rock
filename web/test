@@ -1,0 +1,17 @@
+{"name":"Token Obtain Pair","description":"Takes a set of user credentials and returns an access and refresh 
+JSON web\ntoken pair to prove the authentication of those credentials.",
+"renders":["application/json","text/html"],"parses":["application/json","application/x-www-form-urlencoded",
+"multipart/form-data"],"actions":{"POST":{"username":{"type":"string","required":true,"read_only":false,"label":"Username"},
+"password":{"type":"string","required":true,"read_only":false,"label":"Password"}}}}
+
+
+curl \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{username: "admin", password: "admin"}' \
+  http://localhost:8000/user/login
+
+  {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU2NDgyMjg4OSwianRpIjoiNzM3ZDUyNDJjY2NiNDlmYjg2ZDk1NWFiYzQxYWFlODEiLCJ1c2VyX2lkIjoxfQ.qXDF3uC82cMm9bTpwbzDxehvSWoc-QCATn6r7JJLGr0",
+  "access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTY0NzQwMDg5LCJqdGkiOiIxYjg0NTRiMDRmNGE0ZDkwOGUxMGMyY2NlMDE4MzllZCIsInVzZXJfaWQiOjF9.OwXXCKedAVNgR61zrqxuTeXz26ChPI_f5efNLcDVHb0"}
+
+  ayHkoLsJVDsIEj5aZWcF8WpLf9K7RDURSH6LyHyavi5aqq5rTDLHyYVNMWTEGozR
