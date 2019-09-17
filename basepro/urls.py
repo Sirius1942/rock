@@ -5,10 +5,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 from user.views import MyTokenObtainPairView
 from django.conf import settings
 from django.conf.urls.static import static
+from emyxin import views as emyxin_views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'checkin',emyxin_views.CheckinViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

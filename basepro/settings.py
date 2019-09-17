@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user.apps.UserConfig',
     'corsheaders',
+    'emyxin.apps.EmyxinConfig',
 ]
 
 MIDDLEWARE = [
@@ -174,8 +175,8 @@ CORS_ORIGIN_WHITELIST  = [
     #  “ https://example.com ”，
     #  “ https://sub.example.com ”，
     #  “ http：// localhost：8080 ”，
-    "http://127.0.0.0:8000",
-    "http://localhost:8000",
+    "http://127.0.0.1:8888",
+    "http://localhost:8888",
     "http://localhost:9527",
     "http://127.0.0.0:9527"
 ]
