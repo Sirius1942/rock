@@ -17,7 +17,6 @@ chardet==3.0.4
 chest==0.2.3
 click==6.7
 cloudpickle==0.2.2
-clyent==1.2.2
 colorama==0.3.7
 conda==4.3.8
 configobj==5.0.6
