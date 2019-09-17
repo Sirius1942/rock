@@ -1,6 +1,4 @@
 alabaster==0.7.9
-anaconda-client==1.6.0
-anaconda-navigator==1.4.3
 appnope==0.1.0
 appscript==1.0.1
 astroid==2.2.5
