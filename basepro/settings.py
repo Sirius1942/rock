@@ -190,15 +190,15 @@ SIMPLE_JWT = {
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST  = [
-    #  “ https://example.com ”，
-    #  “ https://sub.example.com ”，
-    #  “ http：// localhost：8080 ”，
-    "http://127.0.0.1:8888",
-    "http://localhost:8888",
-    "http://localhost:9527",
-    "http://127.0.0.0:9527"
-]
+# CORS_ORIGIN_WHITELIST  = ('*')
+#     #  “ https://example.com ”，
+#     #  “ https://sub.example.com ”，
+#     #  “ http：// localhost：8080 ”，
+#     # "http://127.0.0.1:8888",
+#     # "http://localhost:8888",
+#     # "http://localhost:9527",
+#     # "http://127.0.0.0:9527",
+    
 # CORS_ORIGIN_REGEX_WHITELIST  = [
 #      - [R “ ^ HTTPS：// \ W + \例子。\ COM $ ”，
 # ]
