@@ -101,7 +101,7 @@ DATABASES = {
     #使用sqllite 的配置 
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, '../db/db.sqlite3'),
     }
     # # 使用MySql的配置，注意需要先手工创建数据库,初始化未成功无法后续再修改Related model 'user.UserProfile' cannot be resolved
     # 'default': {
