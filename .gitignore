@@ -5,3 +5,4 @@ basepro/__pycache__/settings.cpython-36.pyc
 user/__pycache__/serializers.cpython-36.pyc
 user/__pycache__/views.cpython-36.pyc
 web/node_modules
+*.sqlite3
