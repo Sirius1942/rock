@@ -7,7 +7,7 @@ from rest_framework_simplejwt import authentication
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
-from emyxin.WXBizDataCrypt import WXBizDataCrypt
+# from emyxin.WXBizDataCrypt import WXBizDataCrypt
 import requests
 import json
 
