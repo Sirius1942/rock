@@ -6,4 +6,4 @@ class CheckinlistSerializer(serializers.ModelSerializer):
     class Meta:
         model = checkinlist
 
-        fields = ['title', 'teacher','singner','created_time']
+        fields = ['title', 'teacher','singner','created_time','unid']

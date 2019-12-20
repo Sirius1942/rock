@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'emyxin.apps.EmyxinConfig',
     'werkzeug_debugger_runserver',
     'django_extensions',
+    'snippets.apps.SnippetsConfig'
 ]
 
 MIDDLEWARE = [
