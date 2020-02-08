@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     'emyxin.apps.EmyxinConfig',
     'werkzeug_debugger_runserver',
     'django_extensions',
-    'snippets.apps.SnippetsConfig'
 ]
 
 MIDDLEWARE = [
@@ -93,10 +92,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'basepro.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     #使用sqllite 的配置 
@@ -154,10 +149,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication'
     )
+    
 }
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
@@ -201,12 +198,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 # ]
 
 CORS_ALLOW_METHODS  = [
-     ' DELETE ',
-     ' GET ',
-     ' OPTIONS ',
-     ' PATCH ',
-     ' POST ',
-     ' PUT ',
+     'DELETE',
+     'GET',
+     'OPTIONS',
+     'PATCH',
+     'POST',
+     'PUT',
 ]
 CORS_ALLOW_HEADERS = [
     'accept',
